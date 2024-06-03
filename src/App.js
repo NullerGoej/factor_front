@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import QRCode from 'qrcode.react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [token, setToken] = useState(null);
   const [qrCode, setQrCode] = useState(null);
   const [twoFactorCode, setTwoFactorCode] = useState('');
+  const [action, setAction] = useState('');
 
   const handleLoginClick = async () => {
     try {
@@ -45,7 +47,7 @@ function App() {
 
       await axios.post('https://zealand.moedekjaer.dk/final/api/public/api/two-factor-auth', {
         ip_address: ip,
-        action: 'Doing Stuff' // replace with actual action
+        action: action
       }, {
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -55,13 +57,27 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <button onClick={handleLoginClick}>Login and Setup 2FA</button>
-      {qrCode && <QRCode value={qrCode} />}
-      <input type="text" value={twoFactorCode} onChange={e => setTwoFactorCode(e.target.value)} />
-      <button onClick={handleTwoFactorClick}>Submit 2FA Code</button>
-      <button onClick={handleTwoFactorAuthClick}>Submit 2FA Auth</button>
+    <div className="App bg-dark text-white d-flex justify-content-center align-items-center vh-100">
+  <form className="bg-light p-5 rounded">
+    <h2 className="mb-3 text-center text-dark">2FA Demo</h2>
+    <div className="mb-3">
+      <button type="button" className="btn btn-success w-100" onClick={handleLoginClick}>Login and Setup 2FA</button>
     </div>
+    {qrCode && <QRCode className="d-block mx-auto mb-3" value={qrCode} />}
+    <div className="mb-3">
+      <input className="form-control" type="text" value={twoFactorCode} onChange={e => setTwoFactorCode(e.target.value)} placeholder="Enter 2FA Code" />
+    </div>
+    <div className="mb-3">
+      <button type="button" className="btn btn-success w-100" onClick={handleTwoFactorClick}>Submit 2FA Code</button>
+    </div>
+    <div className="mb-3">
+      <input className="form-control" type="text" value={action} onChange={e => setAction(e.target.value)} placeholder="Enter action" />
+    </div>
+    <div className="mb-3">
+      <button type="button" className="btn btn-success w-100" onClick={handleTwoFactorAuthClick}>Submit 2FA Auth</button>
+    </div>
+  </form>
+</div>
   );
 }
 
