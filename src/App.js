@@ -1,13 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import QRCode from 'qrcode.react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const [token, setToken] = useState(null);
   const [qrCode, setQrCode] = useState(null);
   const [twoFactorCode, setTwoFactorCode] = useState('');
   const [action, setAction] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+        // Check if token is valid api
+        axios.get('https://zealand.moedekjaer.dk/final/api/public/api/user', {
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        }).then(() => {
+            //Do nothing
+        }).catch(() => {
+            localStorage.removeItem('token');
+            navigate('/login'); // remove token if it's invalid
+        });
+    } else {
+      navigate('/login');
+    }
+}, [navigate]);
 
   const handleLoginClick = async () => {
     try {
@@ -56,6 +74,20 @@ function App() {
     }
   };
 
+  const handleLogoutClick = () => {
+    var token = localStorage.getItem('token');
+    axios.get('https://zealand.moedekjaer.dk/final/api/public/api/logout', {
+                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+    }).then(() => {
+      localStorage.removeItem('token');
+      navigate('/login');
+    }).catch(() => {
+      console.log('Failed to logout');
+      navigate('/login');
+    });
+    
+  };
+
   return (
     <div className="App bg-dark text-white d-flex justify-content-center align-items-center vh-100">
   <form className="bg-light p-5 rounded">
@@ -76,6 +108,9 @@ function App() {
     <div className="mb-3">
       <button type="button" className="btn btn-success w-100" onClick={handleTwoFactorAuthClick}>Submit 2FA Auth</button>
     </div>
+    <div className="mb-3">
+        <button type="button" className="btn btn-danger w-100" onClick={handleLogoutClick}>Logout</button>
+      </div>
   </form>
 </div>
   );
