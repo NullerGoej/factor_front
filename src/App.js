@@ -3,6 +3,7 @@ import axios from 'axios';
 import QRCode from 'qrcode.react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 function App() {
   const [token, setToken] = useState(null);
@@ -13,19 +14,19 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-        // Check if token is valid api
-        axios.get('https://zealand.moedekjaer.dk/final/api/public/api/user', {
-            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-        }).then(() => {
-            //Do nothing
-        }).catch(() => {
-            localStorage.removeItem('token');
-            navigate('/login'); // remove token if it's invalid
-        });
+      // Check if token is valid api
+      axios.get('https://zealand.moedekjaer.dk/final/api/public/api/user', {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      }).then(() => {
+        //Do nothing
+      }).catch(() => {
+        localStorage.removeItem('token');
+        navigate('/login'); // remove token if it's invalid
+      });
     } else {
       navigate('/login');
     }
-}, [navigate]);
+  }, [navigate]);
 
   const handleLoginClick = async () => {
     try {
@@ -77,7 +78,7 @@ function App() {
   const handleLogoutClick = () => {
     var token = localStorage.getItem('token');
     axios.get('https://zealand.moedekjaer.dk/final/api/public/api/logout', {
-                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     }).then(() => {
       localStorage.removeItem('token');
       navigate('/login');
@@ -85,34 +86,36 @@ function App() {
       console.log('Failed to logout');
       navigate('/login');
     });
-    
+
   };
 
   return (
-    <div className="App bg-dark text-white d-flex justify-content-center align-items-center vh-100">
-  <form className="bg-light p-5 rounded">
-    <h2 className="mb-3 text-center text-dark">2FA Demo</h2>
-    <div className="mb-3">
-      <button type="button" className="btn btn-success w-100" onClick={handleLoginClick}>Login and Setup 2FA</button>
-    </div>
-    {qrCode && <QRCode className="d-block mx-auto mb-3" value={qrCode} />}
-    <div className="mb-3">
-      <input className="form-control" type="text" value={twoFactorCode} onChange={e => setTwoFactorCode(e.target.value)} placeholder="Enter 2FA Code" />
-    </div>
-    <div className="mb-3">
-      <button type="button" className="btn btn-success w-100" onClick={handleTwoFactorClick}>Submit 2FA Code</button>
-    </div>
-    <div className="mb-3">
-      <input className="form-control" type="text" value={action} onChange={e => setAction(e.target.value)} placeholder="Enter action" />
-    </div>
-    <div className="mb-3">
-      <button type="button" className="btn btn-success w-100" onClick={handleTwoFactorAuthClick}>Submit 2FA Auth</button>
-    </div>
-    <div className="mb-3">
-        <button type="button" className="btn btn-danger w-100" onClick={handleLogoutClick}>Logout</button>
-      </div>
-  </form>
-</div>
+    <div>
+      <Header />
+      <div className="App bg-dark text-white d-flex justify-content-center align-items-center vh-100">
+        <form className="bg-light p-5 rounded">
+          <h2 className="mb-3 text-center text-dark">2FA Demo</h2>
+          <div className="mb-3">
+            <button type="button" className="btn btn-success w-100" onClick={handleLoginClick}>Login and Setup 2FA</button>
+          </div>
+          {qrCode && <QRCode className="d-block mx-auto mb-3" value={qrCode} />}
+          <div className="mb-3">
+            <input className="form-control" type="text" value={twoFactorCode} onChange={e => setTwoFactorCode(e.target.value)} placeholder="Enter 2FA Code" />
+          </div>
+          <div className="mb-3">
+            <button type="button" className="btn btn-success w-100" onClick={handleTwoFactorClick}>Submit 2FA Code</button>
+          </div>
+          <div className="mb-3">
+            <input className="form-control" type="text" value={action} onChange={e => setAction(e.target.value)} placeholder="Enter action" />
+          </div>
+          <div className="mb-3">
+            <button type="button" className="btn btn-success w-100" onClick={handleTwoFactorAuthClick}>Submit 2FA Auth</button>
+          </div>
+          <div className="mb-3">
+            <button type="button" className="btn btn-danger w-100" onClick={handleLogoutClick}>Logout</button>
+          </div>
+        </form>
+      </div></div>
   );
 }
 

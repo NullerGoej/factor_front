@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Header from './Header';
 import { useNavigate, Link } from 'react-router-dom';
 
 function Login() {
@@ -38,25 +39,28 @@ function Login() {
     };
 
     return (
-        <div className="App bg-dark text-dark d-flex justify-content-center align-items-center vh-100">
-            <form className="bg-white p-5 rounded">
-                <h2 className="mb-3 text-center">Login</h2>
-                {error && <div className="alert alert-danger">{error}</div>}
-                <div className="mb-3">
-                    <label className="form-label">Email</label>
-                    <input type="email" className="form-control" placeholder='example@mail.com' value={email} onChange={e => setEmail(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">Password</label>
-                    <input type="password" className="form-control" placeholder='******' value={password} onChange={e => setPassword(e.target.value)} />
-                </div>
-                <div className="mb-3">
-                    <button type="button" className="btn btn-primary w-100" onClick={handleLoginClick}>Login</button>
-                </div>
-                <div className="text-center">
-                    <p>Don't have an account? <Link to="/register">Register</Link></p>
-                </div>
-            </form>
+        <div >
+            <Header />
+            <div className="App bg-dark text-dark d-flex justify-content-center align-items-center vh-100">
+                <form className="bg-white p-5 rounded">
+                    <h2 className="mb-3 text-center">Login</h2>
+                    {error && <div className="alert alert-danger">{error}</div>}
+                    <div className="mb-3">
+                        <label className="form-label">Email</label>
+                        <input type="email" className="form-control" placeholder='example@mail.com' value={email} onChange={e => setEmail(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
+                        <label className="form-label">Password</label>
+                        <input type="password" className="form-control" placeholder='******' value={password} onChange={e => setPassword(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
+                        <button type="button" className="btn btn-primary w-100" onClick={handleLoginClick}>Login</button>
+                    </div>
+                    <div className="text-center">
+                        <p>Don't have an account? <Link to="/register">Register</Link></p>
+                    </div>
+                </form>
+            </div>
         </div>
     );
 }
