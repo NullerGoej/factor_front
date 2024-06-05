@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useNavigate } from 'react-router-dom';
-import './index.scss';
+import { useNavigate, Link } from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -53,7 +51,10 @@ function Login() {
                     <input type="password" className="form-control" placeholder='******' value={password} onChange={e => setPassword(e.target.value)} />
                 </div>
                 <div className="mb-3">
-                    <button type="button" className="btn btn-primary w-100" onClick={handleLoginClick} style={{backgroundColor: '#77dd77'}}>Login</button>
+                    <button type="button" className="btn btn-primary w-100" onClick={handleLoginClick}>Login</button>
+                </div>
+                <div className="text-center">
+                    <p>Don't have an account? <Link to="/register">Register</Link></p>
                 </div>
             </form>
         </div>

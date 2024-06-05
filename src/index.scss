@@ -10,14 +10,18 @@ $primary-color: #77dd77;
   color: black;
 }
 
-.btn-primary:hover {
-  background-color: darken($primary-color, 30%);
-  border-color: darken($primary-color, 30%);
+.btn-primary:hover, .btn-primary:active {
+  background-color: darken($primary-color, 15%);
+  border-color: darken($primary-color, 15%);
   color: black;
 }
 
-.btn-primary:focus, .btn-primary.focus {
+.btn-primary:focus, .btn-primary.focus, .btn-primary:active {
   box-shadow: 0 0 0 0.2rem rgba(119, 221, 119, 0.5);
+}
+
+input {
+  border-color: var(--bs-primary) !important;
 }
 
 body {
