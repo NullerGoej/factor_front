@@ -4,6 +4,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './index.scss';
 import App from './App';
 import Login from './Login';
+import Logout from './Logout';
 import Register from './Register';
 import NotFound from './NotFound';
 import reportWebVitals from './reportWebVitals';
@@ -21,11 +22,11 @@ root.render(
           <Route path="/" element={<App />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </Provider>
-    document.getElementById('root'),
   </React.StrictMode>
 );
 
