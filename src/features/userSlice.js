@@ -27,7 +27,7 @@ export const userSlice = createSlice({
   }
 });
 
-export const fetchUserData = (navigate) => {
+export const fetchUserData = (navigate, location) => {
   return dispatch => {
     // Make API call to fetch user data
     // Example:
@@ -37,8 +37,10 @@ export const fetchUserData = (navigate) => {
       dispatch(fetchUserSuccess(response.data));
       if (response.data.user.phone === 0) {
         navigate('/setup-1');
-      } else if (response.data.user.two_factor_setup === 1) {
+      } else if (response.data.user.phone === 1) {
         navigate('/setup-2');
+      } else if (location === '/setup-1' || location === '/setup-2') {
+        navigate('/');
       }
     }).catch(() => {
       localStorage.removeItem('token');

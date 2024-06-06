@@ -9,11 +9,15 @@ function App() {
 
   useEffect(() => {
     const fetchQrCode = async () => {
-      const qrResponse = await axios.post('https://zealand.moedekjaer.dk/final/api/public/api/two-factor-auth-setup/1', {}, {
+      axios.post('https://zealand.moedekjaer.dk/final/api/public/api/two-factor-auth-setup/1', {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      });
-
-      setQrCode(qrResponse.data.qr_code);
+      })
+        .then((qrResponse) => {
+          setQrCode(qrResponse.data.qr_code);
+        })
+        .catch((error) => {
+          console.error('Failed to fetch QR code:', error);
+        });
     };
 
     fetchQrCode();
@@ -27,7 +31,8 @@ function App() {
           <h2 className="mb-3 text-center text-dark">Scan QR Code</h2>
           {qrCode && <QRCode className="d-block mx-auto mb-3" value={qrCode} />}
         </form>
-      </div></div>
+      </div>
+    </div>
   );
 }
 
