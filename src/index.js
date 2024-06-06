@@ -7,6 +7,7 @@ import Login from './Components/Login';
 import Logout from './Components/Logout';
 import Register from './Components/Register';
 import NotFound from './Components/NotFound';
+import Setup1 from './Components/Setup-1';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
@@ -24,6 +25,7 @@ root.render(
           <Route path="/register" element={<Register />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/setup-1" element={<Setup1 />} />
         </Routes>
       </Router>
     </Provider>
