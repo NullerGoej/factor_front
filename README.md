@@ -4,9 +4,6 @@
 <a href="https://github.com/NullerGoej/factor_backend" target="_blank"><img src="https://img.shields.io/github/languages/top/NullerGoej/factor_backend" alt="Backend Language"></a>
 <a href="https://github.com/NullerGoej/factor_front" target="_blank"><img src="https://img.shields.io/github/languages/top/NullerGoej/factor_front" alt="Frontend Language"></a>
 <a href="https://github.com/NullerGoej/factor_app" target="_blank"><img src="https://img.shields.io/github/languages/top/NullerGoej/factor_app" alt="App Language"></a>
-<a href="https://github.com/NullerGoej/factor_backend/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/NullerGoej/factor_backend?style=social" alt="Backend Stars"></a>
-<a href="https://github.com/NullerGoej/factor_front/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/NullerGoej/factor_front?style=social" alt="Frontend Stars"></a>
-<a href="https://github.com/NullerGoej/factor_app/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/NullerGoej/factor_app?style=social" alt="App Stars"></a>
 </p>
 
 ## About Accessio
