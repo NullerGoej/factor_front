@@ -1,12 +1,12 @@
 <p align="center"><a href="https://github.com/NullerGoej/factor_front" target="_blank"><img src="https://i.imgur.com/7iSNi5G.png" width="400" alt="Accessio Logo"></a></p>
 
 <p align="center">
-<p align="center"><a href="https://github.com/NullerGoej/factor_backend" target="_blank"><img src="https://img.shields.io/github/languages/top/NullerGoej/factor_backend" alt="Backend Language"></a>
-<a href="https://github.com/NullerGoej/factor_front" target="_blank"><img src="https://img.shields.io/github/languages/top/NullerGoej/factor_front" alt="Frontend Language"></a>
-<a href="https://github.com/NullerGoej/factor_app" target="_blank"><img src="https://img.shields.io/github/languages/top/NullerGoej/factor_app" alt="App Language"></a>
-<a href="https://github.com/NullerGoej/factor_backend/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/NullerGoej/factor_backend?style=social" alt="Backend Stars"></a>
-<a href="https://github.com/NullerGoej/factor_front/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/NullerGoej/factor_front?style=social" alt="Frontend Stars"></a>
-<a href="https://github.com/NullerGoej/factor_app/stargazers" target="_blank"><img src="https://img.shields.io/github/stars/NullerGoej/factor_app?style=social" alt="App Stars"></a></p>
+<a href="https://github.com/NullerGoej/factor_backend/actions"><img src="https://github.com/NullerGoej/factor_backend/workflows/tests/badge.svg" alt="Backend Build Status"></a>
+<a href="https://github.com/NullerGoej/factor_front/actions"><img src="https://github.com/NullerGoej/factor_front/workflows/tests/badge.svg" alt="Frontend Build Status"></a>
+<a href="https://github.com/NullerGoej/factor_app/actions"><img src="https://github.com/NullerGoej/factor_app/workflows/tests/badge.svg" alt="App Build Status"></a>
+<a href="https://packagist.org/packages/accessio/accessio"><img src="https://img.shields.io/packagist/dt/accessio/accessio" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/accessio/accessio"><img src="https://img.shields.io/packagist/v/accessio/accessio" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/accessio/accessio"><img src="https://img.shields.io/packagist/l/accessio/accessio" alt="License"></a>
 </p>
 
 ## About Accessio
