@@ -1,14 +1,14 @@
-# Factor - Two-Factor Authentication Solution
+# Accessio - Two-Factor Authentication Solution
 
-![Factor Logo](https://i.imgur.com/yUtCFAa.png)
+![Accessio Logo](https://i.imgur.com/7iSNi5G.png)
 
-Factor is a two-factor authentication solution inspired by MitID, designed to enhance the security of your authentication process in the private sector.
+Accessio is a two-factor authentication solution inspired by MitID, designed to enhance the security of your authentication process in the private sector.
 
 ## Repositories
 
-- [Frontend](https://github.com/NullerGoej/factor_front): Repository for the frontend of the Factor application.
-- [Backend](https://github.com/NullerGoej/factor_backend): Repository for the backend of the Factor application.
-- [App](https://github.com/NullerGoej/factor_app): Repository for the mobile app of the Factor application.
+- [Frontend](https://github.com/NullerGoej/factor_front): Repository for the frontend of the Accessio application.
+- [Backend](https://github.com/NullerGoej/factor_backend): Repository for the backend of the Accessio application.
+- [App](https://github.com/NullerGoej/factor_app): Repository for the mobile app of the Accessio application.
 
 ## Features
 
@@ -19,15 +19,15 @@ Factor is a two-factor authentication solution inspired by MitID, designed to en
 
 ## Getting Started
 
-To get started with Factor, follow these steps:
+To get started with Accessio, follow these steps:
 
 1. Clone the desired repository (Frontend, Backend, or App).
 2. Follow the installation and setup instructions provided in the repository's README.
-3. Start using Factor to enhance the security of your authentication process.
+3. Start using Accessio to enhance the security of your authentication process.
 
 ## Contributing
 
-We welcome contributions from the community! If you'd like to contribute to Factor, please follow these guidelines:
+We welcome contributions from the community! If you'd like to contribute to Accessio, please follow these guidelines:
 
 - Fork the repository on GitHub.
 - Make your changes and commit them to your fork.
@@ -35,7 +35,7 @@ We welcome contributions from the community! If you'd like to contribute to Fact
 
 ## License
 
-Factor is licensed under the [MIT License](LICENSE).
+Accessio is licensed under the [MIT License](LICENSE).
 
 ## Support
 
