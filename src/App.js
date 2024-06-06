@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import QRCode from 'qrcode.react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,22 +11,6 @@ function App() {
   const [twoFactorCode, setTwoFactorCode] = useState('');
   const [action, setAction] = useState('');
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (localStorage.getItem('token')) {
-      // Check if token is valid api
-      axios.get('https://zealand.moedekjaer.dk/final/api/public/api/user', {
-        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-      }).then(() => {
-        //Do nothing
-      }).catch(() => {
-        localStorage.removeItem('token');
-        navigate('/login'); // remove token if it's invalid
-      });
-    } else {
-      navigate('/login');
-    }
-  }, [navigate]);
 
   const handleLoginClick = async () => {
     try {
@@ -76,7 +60,6 @@ function App() {
   };
 
   const handleLogoutClick = () => {
-    var token = localStorage.getItem('token');
     axios.get('https://zealand.moedekjaer.dk/final/api/public/api/logout', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     }).then(() => {
