@@ -1,6 +1,15 @@
-# Accessio - Two-Factor Authentication Solution
+<p align="center"><a href="https://github.com/NullerGoej/factor_front" target="_blank"><img src="https://i.imgur.com/7iSNi5G.png" width="400" alt="Accessio Logo"></a></p>
 
-![Accessio Logo](https://i.imgur.com/7iSNi5G.png)
+<p align="center">
+<a href="https://github.com/NullerGoej/factor_backend/actions"><img src="https://github.com/NullerGoej/factor_backend/workflows/tests/badge.svg" alt="Backend Build Status"></a>
+<a href="https://github.com/NullerGoej/factor_front/actions"><img src="https://github.com/NullerGoej/factor_front/workflows/tests/badge.svg" alt="Frontend Build Status"></a>
+<a href="https://github.com/NullerGoej/factor_app/actions"><img src="https://github.com/NullerGoej/factor_app/workflows/tests/badge.svg" alt="App Build Status"></a>
+<a href="https://packagist.org/packages/accessio/accessio"><img src="https://img.shields.io/packagist/dt/accessio/accessio" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/accessio/accessio"><img src="https://img.shields.io/packagist/v/accessio/accessio" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/accessio/accessio"><img src="https://img.shields.io/packagist/l/accessio/accessio" alt="License"></a>
+</p>
+
+## About Accessio
 
 Accessio is a two-factor authentication solution inspired by MitID, designed to enhance the security of your authentication process in the private sector.
 
@@ -43,5 +52,4 @@ For support, bug reports, and feature requests, please open an issue on the resp
 
 ## Acknowledgements
 
-We would like to thank all contributors and users who have helped make Factor a better solution for secure authentication.
-
+We would like to thank all contributors and users who have helped make Accessio a better solution for secure authentication.
