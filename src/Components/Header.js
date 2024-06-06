@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import UserComponent from './UserComponent';
+import UserComponent from '../App/UserComponent';
 import Loading from './Loading';
 
 class Header extends React.Component {

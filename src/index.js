@@ -2,16 +2,16 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './index.scss';
-import App from './App';
-import Login from './Login';
-import Logout from './Logout';
-import Register from './Register';
-import NotFound from './NotFound';
+import App from './Components/App';
+import Login from './Components/Login';
+import Logout from './Components/Logout';
+import Register from './Components/Register';
+import NotFound from './Components/NotFound';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import store from './store'; // replace with the path to your store
+import store from './App/store'; // replace with the path to your store
 
 const root = createRoot(document.getElementById('root'));
 root.render(
