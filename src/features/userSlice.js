@@ -29,10 +29,6 @@ export const userSlice = createSlice({
 
 export const fetchUserData = (navigate, location) => {
   return dispatch => {
-    if (!localStorage.getItem('token')) {
-      navigate('/login');
-      return;
-    }
     // Make API call to fetch user data
     // Example:
     axios.get('https://zealand.moedekjaer.dk/final/api/public/api/user', {
