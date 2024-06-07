@@ -7,7 +7,7 @@ function Logout() {
     const navigate = useNavigate();
 
     useState(() => {
-        axios.get('https://zealand.moedekjaer.dk/final/api/public/api/logout', {
+        axios.delete('https://zealand.moedekjaer.dk/final/api/public/api/logout', {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(() => {
             localStorage.removeItem('token');
