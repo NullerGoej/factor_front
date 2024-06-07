@@ -14,7 +14,7 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     fetchUserSuccess: (state, action) => {
-      const { firstname, lastname, email, image, phone } = action.payload.user;
+      const { firstname, lastname, email, image, phone} = action.payload.user;
       return {
         ...state,
         firstname,
@@ -29,27 +29,23 @@ export const userSlice = createSlice({
 
 export const fetchUserData = (navigate, location) => {
   return dispatch => {
+    if (!localStorage.getItem('token')) {
+      navigate('/login');
+      return;
+    }
     // Make API call to fetch user data
     // Example:
     axios.get('https://zealand.moedekjaer.dk/final/api/public/api/user', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     }).then((response) => {
-      if (!response.data.user) {
-        if (location != '/login' && location != '/register') {
-          localStorage.removeItem('token');
-          navigate('/login');
-        }
-      } else {
-        dispatch(fetchUserSuccess(response.data));
-        if (response.data.user.phone === 0) {
-          navigate('/setup-1');
-        } else if (response.data.user.phone === 1) {
-          navigate('/setup-2');
-        } else if (location === '/setup-1' || location === '/setup-2') {
-          navigate('/');
-        }
+      dispatch(fetchUserSuccess(response.data));
+      if (response.data.user.phone === 0) {
+        navigate('/setup-1');
+      } else if (response.data.user.phone === 1) {
+        navigate('/setup-2');
+      } else if (location === '/setup-1' || location === '/setup-2') {
+        navigate('/');
       }
-
     }).catch(() => {
       localStorage.removeItem('token');
       navigate('/login');
