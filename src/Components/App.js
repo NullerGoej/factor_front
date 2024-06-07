@@ -11,7 +11,7 @@ function App() {
       const ipResponse = await axios.get('https://api.ipify.org?format=json');
       const ip = ipResponse.data.ip;
 
-      await axios.post('https://zealand.moedekjaer.dk/final/api/public/api/two-factor-auth', {
+      await axios.post('https://zealand.moedekjaer.dk/final/api/public/api/two-factor-auth-request', {
         ip_address: ip,
         action: action
       }, {
