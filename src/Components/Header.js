@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import UserComponent from '../App/UserComponent';
 import Loading from './Loading';
+import { fetchUserData } from '../Features/userSlice';
 
 class Header extends React.Component {
     render() {
         const token = localStorage.getItem('token');
+        fetchUserData();
         return (
             <div>
                 <Loading />

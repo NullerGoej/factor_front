@@ -27,7 +27,7 @@ function App() {
       <Header />
       <div className="App bg-dark text-white d-flex justify-content-center align-items-center vh-100">
         <form className="bg-light p-5 rounded">
-          <h2 className="mb-3 text-center text-dark">2FA Demo</h2>
+          <h2 className="mb-3 text-center text-dark">2FA Dummy Demo</h2>
           <div className="mb-3">
             <input className="form-control" type="text" value={action} onChange={e => setAction(e.target.value)} placeholder="Enter action" />
           </div>
