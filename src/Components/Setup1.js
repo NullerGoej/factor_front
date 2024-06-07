@@ -3,9 +3,11 @@ import axios from 'axios';
 import QRCode from 'qrcode.react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
   const [qrCode, setQrCode] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchQrCode = async () => {
@@ -21,6 +23,28 @@ function App() {
     };
 
     fetchQrCode();
+  }, []);
+
+  // every 2 seconds, check if the user has scanned the QR code
+  useEffect(() => {
+    const interval = setInterval(() => {
+      axios.get('https://zealand.moedekjaer.dk/final/api/public/api/user', {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+      }).then((response) => {
+        if (response.data.user.phone === 0) {
+          navigate('/setup-1');
+        } else if (response.data.user.phone === 1) {
+          navigate('/setup-2');
+        } else {
+          navigate('/');
+        }
+      }).catch(() => {
+        localStorage.removeItem('token');
+        navigate('/login');
+      });
+    }, 2000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
