@@ -12,7 +12,7 @@ function Login() {
     useEffect(() => {
         if (localStorage.getItem('token')) {
             // Check if token is valid api
-            axios.get('https://zealand.moedekjaer.dk/final/api/public/api/user', {
+            axios.get('https://accessio-api.moedekjaer.dk/user', {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             }).then(() => {
                 navigate('/'); // navigate to home page if token is valid
@@ -24,7 +24,7 @@ function Login() {
 
     const handleLoginClick = async () => {
         try {
-            const loginResponse = await axios.post('https://zealand.moedekjaer.dk/final/api/public/api/login', {
+            const loginResponse = await axios.post('https://accessio-api.moedekjaer.dk/login', {
                 email: email,
                 password: password
             });

@@ -31,7 +31,7 @@ export const fetchUserData = (navigate, location) => {
   return dispatch => {
     // Make API call to fetch user data
     // Example:
-    axios.get('https://zealand.moedekjaer.dk/final/api/public/api/user', {
+    axios.get('https://accessio-api.moedekjaer.dk/user', {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
     }).then((response) => {
       dispatch(fetchUserSuccess(response.data));

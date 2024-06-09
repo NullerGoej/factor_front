@@ -9,7 +9,7 @@ function App() {
     const navigate = useNavigate();
 
     const postDigitCode = async () => {
-        axios.post('https://zealand.moedekjaer.dk/final/api/public/api/two-factor-auth-setup/2', {
+        axios.post('https://accessio-api.moedekjaer.dk/two-factor-auth-setup/2', {
             two_factor_6_digit: twoFactorCode
         }, {
             headers: {

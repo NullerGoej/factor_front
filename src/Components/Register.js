@@ -19,7 +19,7 @@ function Register() {
         }
 
         try {
-            await axios.post('https://zealand.moedekjaer.dk/final/api/public/api/register', {
+            await axios.post('https://accessio-api.moedekjaer.dk/register', {
                 firstname: firstName,
                 lastname: lastName,
                 email: email,

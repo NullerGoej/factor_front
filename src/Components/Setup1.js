@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     const fetchQrCode = async () => {
-      axios.post('https://zealand.moedekjaer.dk/final/api/public/api/two-factor-auth-setup/1', {}, {
+      axios.post('https://accessio-api.moedekjaer.dk/two-factor-auth-setup/1', {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       })
         .then((qrResponse) => {
@@ -28,7 +28,7 @@ function App() {
   // every 2 seconds, check if the user has scanned the QR code
   useEffect(() => {
     const interval = setInterval(() => {
-      axios.get('https://zealand.moedekjaer.dk/final/api/public/api/user', {
+      axios.get('https://accessio-api.moedekjaer.dk/user', {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       }).then((response) => {
         if (response.data.user.phone === 0) {
