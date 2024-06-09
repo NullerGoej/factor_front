@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
 import { useNavigate } from 'react-router-dom';
 
-function App() {
+function Setup1() {
   const [qrCode, setQrCode] = useState(null);
   const navigate = useNavigate();
 
@@ -60,4 +60,4 @@ function App() {
   );
 }
 
-export default App;
+export default Setup1;

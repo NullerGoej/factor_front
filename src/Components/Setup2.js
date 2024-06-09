@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header';
 import { useNavigate } from 'react-router-dom';
 
-function App() {
+function Setup2() {
     const [twoFactorCode, setTwoFactorCode] = useState('');
     const navigate = useNavigate();
 
@@ -51,4 +51,4 @@ function App() {
     );
 }
 
-export default App;
+export default Setup2;
