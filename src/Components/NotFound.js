@@ -12,7 +12,7 @@ const NotFound = () => {
     return (
         <div>
             <Header />
-            <div className="bg-dark text-light d-flex justify-content-center align-items-center vh-100">
+            <div className="bg-dark text-dark d-flex justify-content-center align-items-center vh-100">
                 <div className="text-center">
                     <h1 className="display-1">404</h1>
                     <p className="lead">Page not found</p>
