@@ -62,3 +62,21 @@ code {
 .bg-dark {
   background-color: #EBEBEB !important;
 }
+
+.alert-info {
+  background-color: #77dd77;
+  color: black;
+  border-color: #77dd77;
+}
+
+.btn-success {
+  background-color: #77dd77;
+  color: black;
+  border-color: #77dd77;
+}
+
+.btn-success:hover, .btn-success:active {
+  background-color: darken(#77dd77, 15%);
+  border-color: darken(#77dd77, 15%);
+  color: black;
+}
