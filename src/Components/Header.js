@@ -18,7 +18,7 @@ function Header() {
         <div>
             <Loading />
             <nav className="navbar navbar-dark bg-primary fixed-top">
-                <Link className="navbar-brand">
+                <Link className="navbar-brand" to="/">
                     <img src="/logo.png" height="40" className="d-inline-block align-top ms-3" alt="" />
                 </Link>
                 {localStorage.getItem('token') && <div className="dropdown text-end me-3">
