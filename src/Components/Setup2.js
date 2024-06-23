@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 function Setup2() {
     const [twoFactorCode, setTwoFactorCode] = useState('');
     const navigate = useNavigate();
+    const [error, setError] = useState('');
 
     const postDigitCode = async () => {
         axios.post('https://accessio-api.moedekjaer.dk/two-factor-auth-setup/2', {
@@ -20,7 +21,7 @@ function Setup2() {
                 navigate('/');
             })
             .catch((error) => {
-                console.error('Wrong 6 digit: ', error);
+                setError('Invalid code. Please try again.');
             });
     };
 
@@ -34,6 +35,7 @@ function Setup2() {
             <Header />
             <div className="App bg-dark text-white d-flex justify-content-center align-items-center vh-100">
                 <form className="bg-light p-5 rounded" onSubmit={handleSubmit}>
+                    {error && <div className="alert alert-danger">{error}</div>}
                     <input
                         type="number"
                         value={twoFactorCode}
